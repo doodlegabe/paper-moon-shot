@@ -1,0 +1,19 @@
+%h1 Listing text_blocks
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @text_blocks.each do |text_block|
+      %tr
+        %td= link_to 'Show', text_block
+        %td= link_to 'Edit', edit_text_block_path(text_block)
+        %td= link_to 'Destroy', text_block, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Text block', new_text_block_path
