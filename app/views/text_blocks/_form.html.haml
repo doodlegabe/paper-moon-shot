@@ -1,0 +1,20 @@
+= form_for @text_block do |f|
+  .field
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+
+  .field
+    = f.label :body
+    = f.rich_text_area :body
+
+  .field
+    %button{:type=> 'submit', :class=> 'btn btn-success'}
+      Save
+      
+- if @text_block.errors.any?
+  #error_explanation
+    %h2= "#{pluralize(@text_block.errors.count, "error")} prohibited this text_block from being saved:"
+    %ul
+      - @text_block.errors.full_messages.each do |message|
+        %li= message
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :text_blocks
   get 'welcome/home'
   get 'welcome/new_book'
   get 'welcome/new_page'
